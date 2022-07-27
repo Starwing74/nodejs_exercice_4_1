@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+<div class="topnav">
+    <a href="#">Home</a>
+    <a href="#">Planets</a>
+    <a href="#">Heroes</a>
+    <a href="#">About</a>
+</div>
+
+<div class="X">
+<h1>My Planets</h1>
+
+
+<ul class="SG">
+    <% for (const planet of data) { %>
+    <li class="sgLi">
+        <div class="box">
+            <div class="box"><div></div></div>
+            <h3><%- planet.name -%></h3>
+            <ul class="df">
+                <li><%- planet.color -%></li>
+            </ul>
+        </div>
+    </li>
+    <% } %>
+</ul>
+</div>
+
+<form style="padding: 20px;" name="formplanet" method="POST" action="/addplanet">
+    <h3 style="text-align: left;">Add new planet</h3>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" name="name" ></td>
+        </tr>
+        <tr>
+            <td>Color</td>
+            <td><input type="text" name="origin" ></td>
+        </tr>
+        <tr>
+            <td>Icon</td>
+            <td><input type="text" name="icon" ></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input style="margin-top: 10px;" type="submit" value="Save" ></td>
+        </tr>
+    </table>
+</form>
+
+<div class="footer-basic">
+	<footer>
+		<div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+		<ul class="list-inline">
+			<li class="list-inline-item"><a href="#">Home</a></li>
+			<li class="list-inline-item"><a href="#">Services</a></li>
+			<li class="list-inline-item"><a href="#">About</a></li>
+			<li class="list-inline-item"><a href="#">Terms</a></li>
+			<li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+		</ul>
+		<p class="copyright">Company Name © 2018</p>
+	</footer>
+</div>
+
+</body>
+</html>
